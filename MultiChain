@@ -1,0 +1,14 @@
+Here I am listing out the multichain parameters useful on connectin to the multichain platform. 
+
+It supports all commands used in Bitcoin core API. 
+
+we will access this blockchain parameters accessing through multichain-cli command and view them. 
+
+Take a look at the parameters given in below page. 
+
+https://www.multichain.com/developers/blockchain-parameters/
+
+These are present in params.dat file. 
+
+
+
