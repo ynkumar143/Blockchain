@@ -1,4 +1,64 @@
-Here I am listing out the multichain parameters useful on connectin to the multichain platform. 
+This page is dedicated to all the research i done on Multichain. 
+
+Multichain does not support smart contracts. But when multichain is designed for applications like permissioned blockchain use cases. 
+
+What are features
+
+1. Private shared databases 
+2. Control of capacity + cost
+3. Designated "miners"
+4. No cryptocurrency
+5. Collective admin
+6. Hide details
+7. Blockchain as tool not methodology
+
+
+Multichain Use cases
+
+1. Permissioned blockchain
+      Validation by consensus, not by proof of work.
+      
+      What are validation by conesensus and what are those techniques? (Have to research)
+      
+       Every block is digitally signed by creator. 
+             -- Only permissioned parties can "mine"
+       
+       Mining diversity for distributed consensus. 
+       
+       Consensus over data not by execution. 
+           -- Avoid Ethereum style hardfork. 
+           -- No need for fees to stop runaway code. 
+
+2. Full Asset lifecycle
+      Issuance, transfer, exchange, escrow, resissuance, redemption and destruction. 
+      
+3. General Storage and search
+      64MB of data per transaction. 
+      Streams: key-value, identity and time-series
+      
+ What is it flexibility?
+ 
+ 1. Permissions can change over time. 
+ 2. Assets: Re-issuance and destruction. 
+ 3. Streams: nodes follow their interest
+ 4. Custom metadata everywhere
+ 5. Unified JSON-RPC API for applications. 
+ 6. Many blockchain parameters. 
+ 
+Speed and scalability
+
+This is the most important feature we have to talk about any platform in blockchain. 
+
+Multichain can support.. 
+
+1. Millions of addresses, assets , streams
+2. Unlimited transactions / stream items.(have to test)
+3. > 1000 tps (1.0 beta 2 + mid-range server)
+    -- includes signature verification + transaction processing ie Byzatine tolerance
+4. Unlimited nodes in network
+5. Block time as low as 2 seconds. 
+
+
 
 It supports all commands used in Bitcoin core API. 
 
@@ -9,6 +69,3 @@ Take a look at the parameters given in below page.
 https://www.multichain.com/developers/blockchain-parameters/
 
 These are present in params.dat file. 
-
-
-
