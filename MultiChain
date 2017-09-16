@@ -58,6 +58,24 @@ Multichain can support..
 4. Unlimited nodes in network
 5. Block time as low as 2 seconds. 
 
+Let us talk about throughput of Multichain
+
+Bitcoin has a block time of 10 minutes and throughput of about 7 trans/sec. 
+Ethereum has block time of 12 seconds and throughput of about 27 trans/sec. 
+
+But how multichain is making block time as 2 seconds and throught put of 1000 tps?
+Lets analyze
+
+Bitcoin through put is due to block size limit of 1 MB , combined with block time of 10 minutes. 
+
+Consider a small transaction ( 1 input, 2 outputs , all regular addresses) is about 230 bytes in size. peak throughput would be 
+
+100000/10/60/230 = 7.25 tx/sec
+
+Ethereum has several limits for throughput like gas amount, eth price etc., 
+
+In Multichain, according to the development of platform block size can go upto higher as 1 GB. and block time as 2 seconds. 
+So testing on real time applications would achieve that. 
 
 
 It supports all commands used in Bitcoin core API. 
