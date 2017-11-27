@@ -1,0 +1,70 @@
+Distributed ledgers consist of 3 components. 
+
+1. A data model that captures current state of ledger. 
+2. A language of transactions that change the ledger state. 
+3. A protocol used to build consensus among participants around which transactions will be accepted by ledger. 
+
+Transaction Families: 
+
+1. Validator Registry: Provides a methodology for registering ledger services. 
+
+2. Integer Key: used for testing deployed ledgers. 
+
+3. Settings: Provides reference implementations for storing on-chain configuration settings. 
+
+4. Identity: Handle on-chain permissioning for transactor and validator keys to streamline managing idetities for list of public keys. 
+
+Other
+
+Smallbank - H-store Smallbank benchmark. 
+
+Seth - Enables the creation and execution of smart contracts. (Integrates the hyperledger Burrow implementation of EVM into the hyperledger sawtooth framework using Sawtooth Go SDK. 
+
+BlockInfo - Seth Smart Contracts. 
+
+
+Motivation of Sawtooth-lake: 
+
+1. Most notable is the decoupling of the ledger from the transactions. 
+
+2. The concept of transactional families provides support for different data models and transaction semantics, making it extensible for different business domains. 
+
+3. Pluggable consensus enables differeing consensus protocol for both permissioned and non-permissioned networks. 
+
+
+Consensus: 
+
+1. "Nakamoto Consensus"  - Elects a leader through some sort of "lottery". The leader then proposes that can be added to a chain of previously committed blocks. 
+
+Byzantine Fault Tolerance. Uses multiple rounds of explicit votes to achieve consensus. 
+
+Good Lottery Characteristics: 
+
+1. Fairness: Should distribute leader election 
+2. Investment: 
+3. Verification: 
+
+PoET: new secure CPU instructions. 
+
+Every validator requests a wait time from an enclave(a trusted function). Validator with shortest wait time for a particular transaction block is elected as leader. CreateTimer and CheckTimer verifies the time created by the enclave. 
+
+
+Sawtooth represents state for all transaction families in a single instance of Radix Merkel Tree on each validator. 
+
+Radix Merkle Tree Overview: 
+
+Merkle Hashes: addressable Radix Merkle Tree. Copy-on-write data structure which stores successive nodes hashes from leaf-to-rrot. 
+
+Transactions: They always wrapped inside a batch. All transactions within a batch are committed to state together or not at all. (Batches are atomic unit of state change). 
+Overall Structure: Batch, BatchHeader, Transaction and Transaction Header. 
+
+Transaction Header: Header is signed by signers' private key(not sent with the transaction) and resulting signature is stored in header_signature. 
+
+Verification process verifies that the key in signer_pubkey signed header bytes resulting in header signature. 
+
+Batcher_pubkey : must match the public key used to sign the batch in which transaction is contained. 
+
+BlockStore: 
+Contains all blocks in current block chain. This is list of blocks in current block chain , current chain to genesis block. Blocks from fork are not included in BlockStore. 
+
+BlockStore is a persistent on-disk store of all Blocks in current chain. 
